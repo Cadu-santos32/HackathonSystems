@@ -1,0 +1,27 @@
+import java.util.List;
+
+public class Banca {
+    private Projeto projeto;
+    private List<Jurados> jurados;
+    private List<Double> notas;
+
+    public Banca(Projeto projeto, List<Jurados> jurados, List<Double> notas) {
+        this.projeto = projeto;
+        this.jurados = jurados;
+        this.notas = notas;
+    }
+
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    public List<Double> getNotas() {
+        return notas;
+    }
+    public double calcularNotas() {
+        int total = 0;
+        for(int i = 0; i < 5; i++){
+            total += notas(i);
+        }
+    }
+}
