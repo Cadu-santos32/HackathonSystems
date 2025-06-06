@@ -1,3 +1,5 @@
+package main.java.hackathon.modelo;
+
 public abstract class Instituicao {
 
     private String nome;
@@ -5,4 +7,8 @@ public abstract class Instituicao {
     public Instituicao(String nome) {
         this.nome = nome;
     }
+    public String getNome() {
+        return nome;
+    }
+    public abstract String toString();
 }

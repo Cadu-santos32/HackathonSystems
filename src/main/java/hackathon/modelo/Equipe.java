@@ -1,15 +1,17 @@
-package hackathon.modelo;
+package main.java.hackathon.modelo;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Equipe {
     private String nome;
-    private List<Aluno> alunos;
+    private List<Estudante> alunos;
     private Projeto projeto;
 
     public Equipe(String nome) {
         this.nome = nome;
         this.alunos = new ArrayList<>();
     }
-    public void adicionarAluno(Aluno aluno) {
+    public void adicionarAluno(Estudante aluno) {
         if(alunos.size() < 5){
             alunos.add(aluno);
         }

@@ -1,27 +1,33 @@
-import java.util.List;
+package main.java.hackathon.modelo;
 
-public class Banca {
+import java.util.Map;
+
+public class Banca implements Avaliavel {
     private Projeto projeto;
-    private List<Jurados> jurados;
-    private List<Double> notas;
+    private Map<Jurado, Integer> jurados; // Jurado → nota
 
-    public Banca(Projeto projeto, List<Jurados> jurados, List<Double> notas) {
+    public Banca(Projeto projeto, Map<Jurado, Integer> jurados) {
         this.projeto = projeto;
         this.jurados = jurados;
-        this.notas = notas;
     }
 
     public Projeto getProjeto() {
         return projeto;
     }
 
-    public List<Double> getNotas() {
-        return notas;
+    public Map<Jurado, Integer> getJurados() {
+        return jurados;
     }
-    public double calcularNotas() {
-        int total = 0;
-        for(int i = 0; i < 5; i++){
-            total += notas(i);
+
+    @Override
+    public void calcularNotaFinal() {
+        if (jurados.isEmpty()) return;
+
+        int soma = 0;
+        for (Integer nota : jurados.values()) {
+            soma += nota;
         }
+        int media = soma / jurados.size();
+        projeto.setNotaFinal(media);
     }
 }

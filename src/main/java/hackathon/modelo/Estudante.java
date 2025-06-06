@@ -1,15 +1,21 @@
-public class Estudante extends Pessoa{
-    private String nome;
+package main.java.hackathon.modelo;
 
-    public Estudante(String nome) {
-        this.nome = nome;
+public class Estudante extends Pessoa{
+    private int idade;
+
+    public Estudante(String nome, int idade, Instituicao instituicao) {
+        super(nome, instituicao);
+        this.idade = idade;
     }
 
-    public void setNome(string nome){
-        this.nome = nome;
+    public void setNome(String nome) {
+        super.setNome(nome);
     }
 
     public String getNome() {
-        return nome;
+        return super.getNome();
+    }
+    public int getIdade() {
+        return idade;
     }
 }
